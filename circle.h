@@ -6,10 +6,9 @@
 
 float const PI = 3.14159;
 
-class Circle: public Shape {
-    public:
-        Circle(float radius);
-        float radius;
+struct Circle: public Shape {
+    Circle(float radius);
+    float radius;
 };
 
 #endif
