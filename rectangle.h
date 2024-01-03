@@ -3,10 +3,9 @@
 
 #include "shape.h"
 
-class Rectangle: public Shape {
-    public:
-        Rectangle(float w, float h);
-        float w, h;
+struct Rectangle: public Shape {
+    Rectangle(float w, float h);
+    float w, h;
 };
 
 #endif

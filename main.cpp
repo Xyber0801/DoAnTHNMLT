@@ -19,4 +19,8 @@ int main() {
     }
     cout << "Input file opened" << endl;
     readInput(pFile, shapes);
+
+    for (int i = 0; i < shapes.size(); i++) {
+        cout << shapes[i].perimeter << endl;
+    }
 }
