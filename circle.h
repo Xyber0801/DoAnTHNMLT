@@ -2,13 +2,13 @@
 #define CIRCLE_H
 
 #include "shape.h"
-#include <string>
 
 float const PI = 3.14159;
 
 struct Circle: public Shape {
     Circle(float radius);
     float radius;
+    std::string getStrSize() const override;
 };
 
 #endif

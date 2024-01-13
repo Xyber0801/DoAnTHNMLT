@@ -1,4 +1,5 @@
 #include "shape.h"
+#include "type.h"
 #include "circle.h"
 #include "rectangle.h"
 #include "square.h"
@@ -7,20 +8,26 @@
 #include <fstream>
 #include <vector>
 
+
 using namespace std;
 
 int main() {
-    vector<Shape> shapes;
-
+    vector<Shape*> shapes;
     FILE *pFile = fopen("./input.txt", "r");
-    if (pFile == nullptr) {
-        cout << "Unable to open input file";
-        return 0;
-    }
-    cout << "Input file opened" << endl;
-    readInput(pFile, shapes);
 
-    for (int i = 0; i < shapes.size(); i++) {
-        cout << shapes[i].perimeter << endl;
+    if (pFile == NULL) {
+        cout << "Unable to open input file!";
+        return 1;
     }
+
+    readInput(pFile, shapes);
+    
+    output(shapes);
+
+    //Free up memory 
+    for (Shape* shape: shapes) {
+        delete(shape);
+    }
+
+    return 0;
 }
